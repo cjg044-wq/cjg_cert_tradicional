@@ -5,7 +5,7 @@ description: Arma la certificación de ingresos tradicional (RT 37 cap. VI, CPCE
 
 # cjg-cert-tradicional — Certificación de ingresos por facturación
 
-Genera, con el formato del estudio (modelo Povarchik 2025_09 / Fernandez 2026_11):
+Genera, con el formato del estudio:
 
 1. `CERTIFICACION_DE_INGRESOS_<APELLIDO>_<AAAA_MM>.docx` — Word editable (certificación + declaración).
 2. `CERTIFICACION_DE_INGRESOS_<APELLIDO>_<AAAA_MM>.pdf` — certificación del contador (hojas 1-2).
@@ -64,9 +64,9 @@ Armar `/tmp/cert/cliente.json` (ver `ejemplo/cliente_ejemplo.json`):
 
 | Campo | De dónde sale |
 |---|---|
-| `nombre` | Apellido y nombres, en tipo título ("Fernandez Jorge Daniel") |
+| `nombre` | Apellido y nombres, en tipo título ("Perez Juan Carlos") |
 | `trat` | "Sr." / "Sra." |
-| `cuit` | del comprobante / constancia, con guiones (20-27359013-8) |
+| `cuit` | del comprobante / constancia, con guiones (20-20123456-3) |
 | `dni` | de la constancia o DNI; si no hay, derivarlo del CUIT (dígitos 3 a 10, con puntos) y **avisar que hay que confirmarlo** |
 | `domicilio`, `localidad` | encabezado (calle y número / "Localidad, Provincia de X") |
 | `domicilio_real` | texto del punto 1: calle y número, barrio o "entre calles …", "Localidad X, Provincia de Y" |
@@ -101,12 +101,12 @@ Mirar **todas** las imágenes de `/tmp/cert/preview` antes de entregar.
 - **Formato**: idéntico al modelo — Word en carta, Tahoma 10, márgenes sup. 2 cm / izq. 3 cm; el PDF se escala a A4 como lo imprimía PDFCreator. Cuadros con encabezado azul `#44546A`, letra Arial blanca negrita. Lista de documentación en cursiva.
 - **Período certificado**:
   - `criterio_mes = "periodo"` (facturas de servicios con período facturado): desde el primer "Período Facturado Desde" hasta el último "Hasta"; cada factura se imputa al mes de su período (aunque se haya emitido después).
-  - `criterio_mes = "emision"` (sin período facturado, como Povarchik): meses completos desde el primer al último mes de emisión; se imputa por fecha de emisión.
+  - `criterio_mes = "emision"` (sin período facturado): meses completos desde el primer al último mes de emisión; se imputa por fecha de emisión.
   - Si el período lo define Cristian, cargar `desde`/`hasta` en cliente.json.
 - **Total** = suma de facturas y notas de débito menos notas de crédito; en letras: "pesos … con NN centavos" (apócope correcta: "cincuenta y un millones", "veintiún mil").
 - **Documentación respaldatoria** (punto 4): un renglón para facturas y otro para notas de crédito/débito, con rangos por punto de venta en formato `C-00006-00000001`.
 - **Declaración (anexo)**: "<lugar_decl>, <fecha>" con la localidad del cliente; tabla Fecha / Tipo / Punto de Venta / Número Desde / Imp. Total; TOTAL al lado de la firma del cliente. Si no entra en una hoja, el bloque TOTAL + firma pasa entero a la hoja siguiente (nunca se parte).
-- **Cierre del anexo**: "Firmado por mí a los efectos de su identificación con mi certificación de fecha DD/MM/AAAA" — misma fecha que la certificación (el modelo Povarchik tenía otra fecha: error del modelo).
+- **Cierre del anexo**: "Firmado por mí a los efectos de su identificación con mi certificación de fecha DD/MM/AAAA" — misma fecha que la certificación.
 - **Firma del contador**: Cristian Javier García, Contador Público, Universidad Nacional de Córdoba, Matrícula 10-21827-5 CPCE Córdoba. Lugar: "Ciudad de Córdoba, Provincia de Córdoba".
 - **Formato argentino** en todo: fechas dd/mm/aaaa, importes 1.234.567,89.
 

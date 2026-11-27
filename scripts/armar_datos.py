@@ -7,7 +7,7 @@ Uso:
 cliente.json (ver ejemplo/cliente_ejemplo.json):
   nombre            "Apellido Nombres" (como en el modelo, tipo título)
   trat              "Sr." / "Sra."
-  dni, cuit         "27.359.013", "20-27359013-8"
+  dni, cuit         "20.123.456", "20-20123456-3"
   domicilio         calle y número (encabezado)
   localidad         "Santo Tomé, Provincia de Corrientes" (encabezado)
   domicilio_real    texto completo para el punto 1 (calle, barrio/entre calles, localidad, provincia)
@@ -131,7 +131,7 @@ def main():
     elif criterio == "periodo" and all(c.get("desde") and c.get("hasta") for c in lista):
         desde = min(d(c["desde"]) for c in lista)
         hasta = max(d(c["hasta"]) for c in lista)
-    else:  # por emisión: meses completos, como el modelo Povarchik
+    else:  # por emisión: meses completos, como en certificaciones con muchas facturas
         f = [d(c["fecha"]) for c in lista]
         a, b = min(f), max(f)
         desde = date(a.year, a.month, 1)
