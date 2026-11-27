@@ -1,0 +1,13 @@
+{
+ "nombre": "Perez Juan Carlos",
+ "trat": "Sr.",
+ "dni": "20.123.456",
+ "cuit": "20-20123456-3",
+ "domicilio": "San Martín 100",
+ "localidad": "Córdoba Capital, Provincia de Córdoba",
+ "domicilio_real": "San Martín 100, Barrio Centro, Localidad Córdoba, Provincia de Córdoba",
+ "actividad": "SERVICIOS PERSONALES N.C.P.",
+ "columna": "Servicios Personales",
+ "lugar_decl": "Córdoba",
+ "criterio_mes": "periodo"
+}
