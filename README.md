@@ -20,7 +20,7 @@ Entregables: Word editable + PDF de la certificación + PDF del anexo (declaraci
 
 ## Assets privados (no se versionan)
 
-Este repo es público: la firma del contador y la fuente Tahoma Bold viven en
+La firma del contador y la fuente Tahoma Bold viven en
 `G:\Mi unidad\Claude - Skills\cjg-cert-tradicional\` (`firma_cjg.png`, `tahoma_bold.ttf`).
 
 ## Uso rápido

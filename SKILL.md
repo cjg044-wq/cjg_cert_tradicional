@@ -13,14 +13,18 @@ Genera, con el formato del estudio:
 
 `<AAAA_MM>` = mes en que termina el período certificado.
 
-Código: repo público `https://github.com/cjg044-wq/cjg_cert_tradicional`. **Nunca** subir al repo firmas, la fuente Tahoma ni datos de clientes.
+Código: repo **privado** `cjg044-wq/cjg_cert_tradicional`. Aun siendo privado, no subir firmas, la fuente Tahoma ni datos de clientes.
 
 ## 0. Preparar el entorno
+
+Como el repo es privado, primero agregarlo a la sesión con `add_repo` (owner `cjg044-wq`, repo `cjg_cert_tradicional`, access `read`) y clonarlo con el comando que devuelve. Después:
 
 ```bash
 git clone --depth 1 https://github.com/cjg044-wq/cjg_cert_tradicional /tmp/cjg_cert_tradicional 2>/dev/null || git -C /tmp/cjg_cert_tradicional pull
 S=/tmp/cjg_cert_tradicional/scripts
 ```
+
+Si no hay forma de acceder al repo, avisar a Cristian (no reescribir los scripts de memoria).
 
 Assets privados (no están en el repo) en la carpeta de skills de Cristian:
 `G:\Mi unidad\Claude - Skills\cjg-cert-tradicional\`
