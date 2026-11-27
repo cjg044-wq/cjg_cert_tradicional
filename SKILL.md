@@ -91,10 +91,10 @@ Recorta y saca el fondo. Sin firma, el anexo queda con la línea de firma, nombr
 
 ```bash
 python3 -I $S/armar_datos.py /tmp/cert/comprobantes.json /tmp/cert/cliente.json /tmp/cert/datos.json
-PREVIEW_DIR=/tmp/cert/preview $S/generar.sh /tmp/cert/datos.json /tmp/cert/salida /tmp/cjg_assets
+PREVIEW_DIR=/tmp/cert/preview $S/generar.sh /tmp/cert/datos.json /mnt/user-data/outputs/cert_<APELLIDO> /tmp/cjg_assets
 ```
 
-Mirar **todas** las imágenes de `/tmp/cert/preview` antes de entregar.
+Los entregables van bajo `/mnt/user-data/outputs/` porque `device_commit_files` solo toma archivos de ahí. Mirar **todas** las imágenes de `/tmp/cert/preview` antes de entregar.
 
 ## Criterios (validados por Cristian)
 
@@ -114,7 +114,7 @@ Mirar **todas** las imágenes de `/tmp/cert/preview` antes de entregar.
 
 - Total de la certificación = total del cuadro mensual = TOTAL del anexo.
 - Monto en letras bien escrito.
-- Sin páginas en blanco; la certificación ocupa 2 hojas.
+- Sin páginas en blanco; el bloque TOTAL + firma del anexo no se parte.
 - **Monotributo**: comparar lo facturado con la categoría de ARCA (y los topes vigentes, buscándolos si hace falta). Si supera la categoría, avisar (recategorización / riesgo de exclusión).
 - Reportar anomalías de los comprobantes (fechas o años mal cargados, condición IVA del receptor, números faltantes).
 
